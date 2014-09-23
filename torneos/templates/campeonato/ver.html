@@ -1,0 +1,19 @@
+ {% extends "banner_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Welcome" %}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block banner %}
+    <h2>Información torneo</h2>
+        {{ campeonatos.nombre }}
+        {{ campeonatos.direccion }}
+        {{ campeonatos.telefono }}
+    <h2>Equipos</h2>
+        <a href="{% url 'campeonatos:agregar_equipo' campeonatos.id%}" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-plus"></span> Agregar Equipo</a>
+        {% for equipo in  equipos %}
+                {{ equipo.nombre }}
+         {% endfor %}
+{% endblock %}

@@ -1,0 +1,20 @@
+ {% extends "banner_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Welcome" %}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block banner %}
+    
+
+     <form method="post">{% csrf_token %}
+
+         {{ form.as_p }}
+
+         <input type="hidden" name="id_equipo" value="1"/>
+         <a href="#">Cancelar</a> <input type="submit" value="Guardar" />
+
+    </form>
+{% endblock %}

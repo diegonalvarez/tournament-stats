@@ -1,0 +1,67 @@
+{% extends "banner_base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Welcome" %}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block banner %}
+    <h2>{% trans "Panel de administración de sus aplicaciones" %}</h2>
+
+    <p>
+    <div class="container">
+    <h2></h2>
+    <div class="row form-group product-chooser">
+    
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="product-chooser-item selected">
+                <img src="{{ STATIC_URL }}images/torneos.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Mobile and Desktop">
+                <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                    <span class="title">Torneos:</span>
+                    </br>
+                    <span class="description"><a href="{% url 'campeonatos:agregar_torneo' %}" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-plus"></span> Agregar Torneo</a></span>
+                    </br>
+                    <span class="description"><a href="{% url 'campeonatos:encurso_torneo' %}" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-plus"></span> Torneos en curso</a></span>
+                    </br>
+                    <span class="description"><a href="{% url 'campeonatos:finalizados_torneo' %}" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-plus"></span> Torneos finalizados</a></span>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="product-chooser-item">
+                <img src="{{ STATIC_URL }}images/equipos.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Desktop">
+                <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                    <span class="title">Equipos</span>
+                    </br>
+                    <span class="description"> <a href="{% url 'equipos:agregar_equipo' %}" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-plus"></span> Agregar Equipo</a></span>
+                    </br>
+                    <span class="description"><a href="{% url 'equipos:lista_equipo' %}" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-plus"></span> Editar Equipos</a></span>
+                    </br>
+                    <span class="description"><a href="{% url 'campeonatos:agregar_torneo' %}" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-plus"></span> Torneos finalizados</a></span>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <div class="product-chooser-item">
+                <img src="{{ STATIC_URL }}images/jugadores.png" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Mobile">
+                <div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+                    <span class="title">Jugadores</span>
+                    </br>
+                    <span class="description"><a href="{% url 'campeonatos:agregar_torneo' %}" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-plus"></span> Agregar Jugador</a></span>
+                    </br>
+                    <span class="description"><a href="{% url 'campeonatos:encurso_torneo' %}" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-plus"></span> Editar Jugadores</a></span>
+                    </br>
+                    <span class="description"><a href="{% url 'campeonatos:agregar_torneo' %}" class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-plus"></span> Torneos finalizados</a></span>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        
+    </div>
+</p>
+{% endblock %}
